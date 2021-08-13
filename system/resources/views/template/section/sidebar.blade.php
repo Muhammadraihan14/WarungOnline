@@ -44,7 +44,7 @@ function checkRouteActive($route){
               </li>
 
               <li class="nav-item">
-                <a href="{{ url ('produk')}}" class="nav-link nav-link {{checkRouteActive('produk')}}">
+                <a href="{{ url ('admin/produk')}}" class="nav-link nav-link {{checkRouteActive('admin/produk')}}">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Produk
@@ -62,10 +62,10 @@ function checkRouteActive($route){
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url ('promo')}}" class="nav-link nav-link nav-link {{checkRouteActive('promo')}} ">
+                <a href="{{ url ('admin/user')}}" class="nav-link nav-link nav-link {{checkRouteActive('admin/user')}} ">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
-                   Promo
+                   User
                   </p>
                 </a>
               </li>

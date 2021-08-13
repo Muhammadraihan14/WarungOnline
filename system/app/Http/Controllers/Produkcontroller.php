@@ -33,7 +33,7 @@ class Produkcontroller extends Controller{
 		$produk->deskripsi = request ('deskripsi');
 		$produk->save();
 
-		return redirect('produk');
+		return redirect('produk')->with('success', 'Data Berhasil Ditambahkan');
 
 
 	}
@@ -65,13 +65,15 @@ class Produkcontroller extends Controller{
 		$produk->deskripsi = request ('deskripsi');
 		$produk->save();
 
-		return redirect('produk');
+		return redirect('produk')->with('warning', 'Data Berhasil Diubah');
 
 
  	}
  	// untuk mengupdate data/ merubaha data
 
- 	function destroy(){
+ 	function destroy(Produk $produk){
+ 		$produk->delete();
+ 		return redirect('produk')->with('danger', 'Data Berhasil Dihapus');
 
 
  	}

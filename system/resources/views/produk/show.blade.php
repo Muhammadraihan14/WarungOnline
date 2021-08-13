@@ -18,7 +18,7 @@
 			<p>
 				{!! nl2br($produk->deskripsi) !!}
 			</p>
-			<a class="btn btn-dark float-right" href="{{url ('produk')}}">kembali</a>
+			<a class="btn btn-dark float-right" href="{{url ('admin/produk')}}">kembali</a>
 			</div>
 
 		</div>

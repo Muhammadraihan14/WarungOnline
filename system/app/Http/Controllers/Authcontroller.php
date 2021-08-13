@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Auth;
 
 class Authcontroller extends Controller{
 
@@ -9,27 +10,30 @@ class Authcontroller extends Controller{
 		return view('login');
 	}
 
-	function Processlogin(){
+	function loginprocess(){
+		
+		if (Auth::attempt(['email' => request('email'), 'password' =>  request('password')])) {
+			return redirect('beranda')->with('success', 'Login Berhasil');
+		} else {
+			return back()->with('danger', 'Login Gagal, Email atau Sandi Salah');
+		}
 
 	}
 
-	function Registration(){
+	function logout(){
+		Auth::logout();
+		return redirect('login');
+
+	}
+
+	function registration(){
+
+	}
+
+	function forgotPassword(){
 
 	}
 
 
 }
- 
 
-
-
-
-
-
-
-
-
-
-
-
- ?>

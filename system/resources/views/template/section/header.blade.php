@@ -40,7 +40,12 @@
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          Muhammad Raihan
+          @if(Auth::check())
+          {{request()->user()->nama}}
+          @else
+          Silahkan Login
+          @endif
+
           <img src=" {{ url('public') }}/dist/img/kuliah.jpg" class="img-circle elevation-2" alt="User Image" style="height: 100%">
       
           </a>
@@ -51,7 +56,7 @@
           <a href="#" class="dropdown-item">
             <i class="fa fa-cog"></i> setting
           </a>
-          <a href="{{url ('login')}}" class="dropdown-item">
+          <a href="{{url ('logout')}}" class="dropdown-item">
             <i class="fa fa-out"></i> keluar
           </a>
          
